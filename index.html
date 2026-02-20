@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knitting Stitch Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container mt-4 mb-5">
+        <h1 class="text-center mb-4">Knitting Stitch Calculator</h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <div class="instruction-text">
+                    <p class="mb-0">Enter your current stitches and either total needed stitches or increase amount. The app will calculate the missing value and provide an even distribution pattern.</p>
+                </div>
+                
+                <form id="stitchCalculatorForm" class="mt-4">
+                    <div class="mb-3">
+                        <label for="currentStitches" class="form-label">Current Stitches *</label>
+                        <input type="number" class="form-control form-control-lg" id="currentStitches" placeholder="Enter current stitch count" required>
+                        <div class="invalid-feedback">Please enter the number of current stitches.</div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="totalNeededStitches" class="form-label">Total Needed Stitches</label>
+                            <input type="number" class="form-control" id="totalNeededStitches" placeholder="Enter total stitches needed">
+                            <div class="form-text">Enter either this or "Increase" below</div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="increase" class="form-label">Increase</label>
+                            <input type="number" class="form-control" id="increase" placeholder="Enter increase amount">
+                            <div class="form-text">Enter either this or "Total Needed Stitches" to the left</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Calculate Stitch Pattern</button>
+                    </div>
+                </form>
+                
+                <div id="results" class="mt-4 d-none">
+                    <div class="results-section">
+                        <h3>Calculation Results</h3>
+                        <div id="calculationResult"></div>
+                        <div id="distributionPattern"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            <p class="mb-0">This app works offline after first visit. Add to Home Screen for easy access!</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
