@@ -86,7 +86,7 @@ h1 {
 .alert {
     background-color: #21252b;
     border: 1px solid #3e4451;
-    color: #abb2bf;
+    color: #d19a66;
     border-radius: 0.3rem;
 }
 
@@ -94,8 +94,28 @@ h1 {
     border-left: 4px solid #61afef;
 }
 
+.alert-info h5 {
+    color: #61afef;
+}
+
 .alert-success {
     border-left: 4px solid #98c379;
+}
+
+.alert-success h5 {
+    color: #98c379;
+}
+
+.pattern-container h4 {
+    color: #e06c75;
+}
+
+.pattern-container p {
+    color: #abb2bf;
+}
+
+.pattern-container strong {
+    color: #d19a66;
 }
 
 .pattern-container {
