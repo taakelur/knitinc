@@ -49,4 +49,6 @@ Current stitches: 10, Increase: 3
 
 ## Deployment
 
-Simply host all files on a static hosting service like GitHub Pages.
+This project is automatically deployed to GitHub Pages using GitHub Actions whenever changes are pushed to the `main` branch.
+
+To deploy manually, you can also trigger the workflow from the GitHub Actions tab.
