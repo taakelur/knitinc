@@ -47,6 +47,11 @@ h1 {
     color: #5c6370;
 }
 
+.form-text {
+    color: #d19a66;
+    font-size: 0.875em;
+}
+
 .btn-primary {
     background-color: #61afef;
     border-color: #61afef;
@@ -124,13 +129,13 @@ h1 {
     padding: 1rem;
     margin-top: 1rem;
     border-left: 4px solid #61afef;
-    color: #abb2bf;
+    color: #d19a66;
 }
 
 .footer-note {
     text-align: center;
     margin-top: 2rem;
-    color: #5c6370;
+    color: #d19a66;
     font-size: 0.9rem;
 }
 
