@@ -89,9 +89,11 @@ function distributeIncreases(currentStitches, increase) {
     // Create pattern array
     const pattern = Array(increase).fill(baseInterval);
     
-    // Distribute remainder more evenly across the pattern
+    // Distribute remainder evenly across the pattern
+    // We spread the extra stitches as evenly as possible
     if (remainder > 0) {
-        const step = Math.ceil(increase / remainder);
+        // Use a more even distribution algorithm
+        const step = increase / remainder;
         for (let i = 0; i < remainder; i++) {
             const index = Math.floor(i * step);
             // Make sure we don't go out of bounds
@@ -99,6 +101,12 @@ function distributeIncreases(currentStitches, increase) {
                 pattern[index] += 1;
             }
         }
+    }
+    
+    // Verify that the sum of all intervals equals currentStitches
+    const sum = pattern.reduce((acc, val) => acc + val, 0);
+    if (sum !== currentStitches) {
+        console.error(`Distribution error: sum (${sum}) != currentStitches (${currentStitches})`);
     }
     
     return pattern;
