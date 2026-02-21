@@ -112,6 +112,12 @@ function distributeIncreases(currentStitches, increase) {
     return pattern;
 }
 
+// Helper function to sanitize user inputs
+function sanitizeInput(str) {
+    if (typeof str !== 'string') return str;
+    return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 function displayResults(total, increase, pattern) {
     const resultsDiv = document.getElementById('results');
     const calculationResultDiv = document.getElementById('calculationResult');
@@ -126,13 +132,13 @@ function displayResults(total, increase, pattern) {
             <div class="col-md-6">
                 <div class="alert alert-info">
                     <h5>Total Needed Stitches</h5>
-                    <p class="mb-0 fs-4">${total}</p>
+                    <p class="mb-0 fs-4">${sanitizeInput(total)}</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="alert alert-success">
                     <h5>Increase Amount</h5>
-                    <p class="mb-0 fs-4">${increase}</p>
+                    <p class="mb-0 fs-4">${sanitizeInput(increase)}</p>
                 </div>
             </div>
         </div>
@@ -148,20 +154,22 @@ function displayResults(total, increase, pattern) {
         `;
     } else {
         const patternText = pattern.map((interval, index) => {
+            const sanitizedInterval = sanitizeInput(interval);
             if (index === pattern.length - 1) {
-                return `knit ${interval}`;
+                return `knit ${sanitizedInterval}`;
             } else {
-                return `knit ${interval}, increase`;
+                return `knit ${sanitizedInterval}, increase`;
             }
         }).join(', ');
         
         // Create visual pattern items
         let patternItems = '';
         pattern.forEach((interval, index) => {
+            const sanitizedInterval = sanitizeInput(interval);
             if (index === pattern.length - 1) {
-                patternItems += `<span class="pattern-item">Knit ${interval}</span>`;
+                patternItems += `<span class="pattern-item">Knit ${sanitizedInterval}</span>`;
             } else {
-                patternItems += `<span class="pattern-item">Knit ${interval}</span><span class="mx-2">→</span><span class="pattern-item">Inc</span><span class="mx-2">→</span>`;
+                patternItems += `<span class="pattern-item">Knit ${sanitizedInterval}</span><span class="mx-2">→</span><span class="pattern-item">Inc</span><span class="mx-2">→</span>`;
             }
         });
         

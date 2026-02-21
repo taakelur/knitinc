@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stitch-calculator-v2';
+const CACHE_NAME = 'stitch-calculator-v2-secure';
 const urlsToCache = [
     '/',
     '/index.html',
