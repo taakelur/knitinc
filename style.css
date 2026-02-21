@@ -143,6 +143,10 @@ h1 {
     box-shadow: 0 0.125rem 0.25rem rgba(97, 175, 239, 0.25);
 }
 
+.mx-2 {
+    color: #98c379;
+}
+
 .instruction-text {
     background-color: #21252b;
     border-radius: 0.3rem;
