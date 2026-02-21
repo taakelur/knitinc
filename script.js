@@ -89,9 +89,16 @@ function distributeIncreases(currentStitches, increase) {
     // Create pattern array
     const pattern = Array(increase).fill(baseInterval);
     
-    // Distribute remainder by adding 1 to the first 'remainder' intervals
-    for (let i = 0; i < remainder; i++) {
-        pattern[i] += 1;
+    // Distribute remainder more evenly across the pattern
+    if (remainder > 0) {
+        const step = Math.ceil(increase / remainder);
+        for (let i = 0; i < remainder; i++) {
+            const index = Math.floor(i * step);
+            // Make sure we don't go out of bounds
+            if (index < pattern.length) {
+                pattern[index] += 1;
+            }
+        }
     }
     
     return pattern;
