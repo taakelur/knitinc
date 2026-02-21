@@ -4,7 +4,7 @@
     "description": "A progressive web app for knitters to calculate stitch increases and distribution patterns",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#121212",
     "theme_color": "#0d6efd",
     "icons": [
         {
