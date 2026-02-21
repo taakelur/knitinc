@@ -167,9 +167,9 @@ function displayResults(total, increase, pattern) {
         pattern.forEach((interval, index) => {
             const sanitizedInterval = sanitizeInput(interval);
             if (index === pattern.length - 1) {
-                patternItems += `<span class="pattern-item">Knit ${sanitizedInterval}</span>`;
+                patternItems += `<button class="pattern-item" data-index="${index}" onclick="toggleKnitStatus(this)">Knit ${sanitizedInterval}</button>`;
             } else {
-                patternItems += `<span class="pattern-item">Knit ${sanitizedInterval}</span><span class="mx-2">→</span><span class="pattern-item">Inc</span><span class="mx-2">→</span>`;
+                patternItems += `<button class="pattern-item" data-index="${index}" onclick="toggleKnitStatus(this)">Knit ${sanitizedInterval}</button><span class="mx-2">→</span><span class="pattern-item">Inc</span><span class="mx-2">→</span>`;
             }
         });
         
@@ -190,4 +190,9 @@ function displayResults(total, increase, pattern) {
     
     // Scroll to results
     resultsDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to toggle knit status (turn button green when clicked)
+function toggleKnitStatus(button) {
+    button.classList.toggle('completed');
 }
